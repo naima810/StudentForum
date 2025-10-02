@@ -15,6 +15,7 @@
 		</div>
 		<button class="login-button">Login</button>
 		<h1>Hello github</h1>
+		<p>So much tension setting up git</p>
 	</nav>
 </body>
 </html>

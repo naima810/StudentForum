@@ -17,5 +17,14 @@
 		<h1>Hello github</h1>
 		<p>So much tension setting up git</p>
 	</nav>
+	<form action="signup" method="post">
+		<label for="name">Name : </label>
+		<input type="text" name="name"/><br/>
+		<label for="email">Email : </label>
+		<input type="text" name="email"/>
+		<label for="password">Password : </label>
+		<input type="password" name="password"/><br/>
+		<input type = "submit"/>
+	</form>
 </body>
 </html>

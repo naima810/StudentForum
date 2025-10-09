@@ -25,9 +25,11 @@ public class SignupServlet extends HttpServlet {
 		boolean success = dao.addUser(user);
 		
 		if(success) {
-			response.getWriter().println("Success registering user");
+			
+			response.getWriter().printf("Success registering user");
 		}
 		else {
+			response.getWriter().println(success);
 			response.getWriter().println("Error registering user");
 		}
 	}

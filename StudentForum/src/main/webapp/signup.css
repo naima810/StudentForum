@@ -6,7 +6,10 @@
 }
 
 body {
-  	background-color: #91d3f8;
+  	background-image: url("signup-bg-3.jpg");
+  	background-size: cover;
+  	background-repeat: no-repeat;
+  	background-position: center;
   	display: flex;
   	justify-content: center;
   	align-items: center;
@@ -30,8 +33,8 @@ body {
 
 .img-div {
   	flex: 1;
-  	background-image: url("student_forum_login.jpg");
-  	background-size: contain;
+  	background-image: url("signup-bg.jpg");
+  	background-size: cover;
   	background-repeat: no-repeat;
   	background-position: center;
 }
@@ -41,7 +44,6 @@ body {
   	display: flex;
   	justify-content: center;
   	align-items: center;
-  	border-left : 1px solid gray;
 }
 
 .inner-div {

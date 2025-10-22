@@ -14,7 +14,7 @@ String passwordType = "password";
 %>
 
 <div class="outer-div">
-	<div class="img-div"></div>
+	
 	<div class="form-div">
 	<form class="inner-div" action="signup" method="post">
 	<div>
@@ -30,12 +30,13 @@ String passwordType = "password";
 		</div>
 		<div class="input">
 		<label for="password: ">Password: </label>
-		<input type="<%= passwordType %>" name="password" placeholder="Password..."/>
+		<input type="<%= passwordType %>" name="password" placeholder="Password...">
 		</div>
 		<input class="submit-btn" type="submit" class="button"/>
 		<a href="/StudentForum/login.jsp">Already have an account? Log in</a>
 	</form>
 	</div>
+	<div class="img-div"></div>
 </div>
 </body>
 </html>

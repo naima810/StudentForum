@@ -6,10 +6,7 @@
 }
 
 body {
-  	background-image: url("signup-bg-3.jpg");
-  	background-size: cover;
-  	background-repeat: no-repeat;
-  	background-position: center;
+	background-color: #faf9f5;
   	display: flex;
   	justify-content: center;
   	align-items: center;
@@ -37,6 +34,7 @@ body {
   	background-size: cover;
   	background-repeat: no-repeat;
   	background-position: center;
+  	border-radius : 0px 20px 20px 0px;
 }
 
 .form-div {
@@ -56,7 +54,7 @@ body {
 
 h1 {
   	text-align: center;
-  	color: #173b6f;
+  	color: #02357b;
   	margin-bottom: 0.5rem;
 }
 
@@ -76,7 +74,7 @@ input {
 }
 
 input:focus {
-  	border-color: #173b6f;
+  	border-color: #02357b;
 }
 
 .submit-btn {
@@ -85,7 +83,7 @@ input:focus {
   	border: none;
   	border-radius: 8px;
   	font-weight: bold;
-  	background-color: #173b6f;
+  	background-color: #02357b;
   	color: #fff;
   	cursor: pointer;
   	transition: background-color 0.3s;
@@ -99,7 +97,7 @@ input:focus {
 
 .inner-div a {
   	text-align: center;
-  	color: #173b6f;
+  	color: #02357b;
   	text-decoration: none;
   	font-size: 0.9rem;
   	transition: color 0.3s;

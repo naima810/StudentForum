@@ -1,59 +1,383 @@
-@charset "UTF-8";
-*{
-	margin: 0;
-	font-family: arial;
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #F9FAFB;
+    color: #2B2B2B;
 }
 
-body{
-	background-color: #f2efeb;
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	width : 100vw;
+/* Top Navbar */
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2C2C2C; /* Graphite */
+    color: white;
+    padding: 12px 24px;
+    height: 60px;
+    box-sizing: border-box;
+}
+
+.logo {
+    font-weight: 600;
+    font-size: 1.3rem;
+    color: #F4C542; /* gold accent */
+}
+
+/* make topnav and profile share the space properly */
+.topnav {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.topnav a {
+    color: #F9F9F9;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.2s, opacity 0.2s;
+}
+
+.topnav a:hover {
+    color: #F4C542; /* gold hover */
+}
+
+/* Profile section in topbar */
+.topbar-profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.topbar-profile p {
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+.topbar-profile-pic {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: #F4C542; /* placeholder gold */
+    border: 2px solid white;
+    background-image: url('profile.jpg'); /* optional */
+    background-size: cover;
+    background-position: center;
+}
+
+/* Layout */
+.container {
+    display: flex;
+    height: calc(100vh - 60px);
+}
+
+/* Sidebar */
+.sidebar {
+    width: 200px;
+    background-color: #F2F2F2;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+    border-right: 1px solid #DDD;
+}
+
+.sidebar a {
+    padding: 12px 20px;
+    text-decoration: none;
+    color: #333;
+    display: block;
+    transition: background 0.2s, color 0.2s;
+}
+
+.sidebar a:hover {
+    background-color: #FFF4D2;
+    color: #2C2C2C;
+}
+
+.sidebar a.active {
+    background-color: #F4C542;
+    color: #2C2C2C;
+    font-weight: 600;
+}
+
+/* Content */
+
+.hero {
+    position: relative;
+    height: 70vh;
+    background: url("forum-hero-bg.jpg") center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #1C1C1C;
+    overflow: hidden;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom right,
+        rgba(255, 255, 255, 0.65),
+        rgba(241, 205, 96, 0.55)
+    );
+    backdrop-filter: blur(3px);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 700px;
+    padding: 0 20px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #1C1C1C;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #333;
+}
+
+.highlight {
+    color: #F4C542; 
+    font-weight: 700;
+}
+
+.soft-highlight {
+    color: #E27D60;
+    font-weight: 600;
+}
+
+strong {
+    color: #1E3A8A; 
+}
+
+.hero-btns {
+  display: flex;
+  justify-content: center;
+  align-items : center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  z-index: 2;
+}
+
+.hero-btns button {
+  padding: 0.9rem 2rem;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Primary button — solid dark */
+.hero-btns .join {
+  background-color: #2c2c2c;
+  color: #fff;
+}
+
+.hero-btns .join:hover {
+  background-color: #000;
+  transform: translateY(-2px);
+}
+
+/* Secondary button — outlined */
+.hero-btns .forum-btn {
+  background-color: transparent;
+  border-color: #2c2c2c;
+  color: #2c2c2c;
+}
+
+.hero-btns .forum-btn:hover {
+  background-color: #2c2c2c;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.content {
+    flex: 1;
+    overflow-y: auto;
+    flex-direction: column;
+}
+
+/*cards for 4 colors*/
+
+.features {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;
+  gap: 25px;
+  padding: 60px 5%;
+  background-color: #f9f9f9;
+  box-sizing: border-box;
+}
+
+.feature-card {
+  position: relative;
+  width: 200px;
+  height: 370px;
+  border-radius: 15px;
+  overflow: hidden;
+  display: flex;
+  padding: 2rem 1rem;
+  color: white;
+  flex-shrink: 0;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.feature-text {
+  padding: 10px;
+  text-align: left;
+}
+
+.feature-text h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+.feature-text p {
+  font-size: 0.95rem;
+  color: #f0f0f0;
+  line-height: 1.5;
+}
+
+.feature-text button {
+  margin-top: 20px;
+  background-color: #fff;
+  color: inherit;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: opacity 0.3s;
+}
+
+.feature-text button:hover {
+  opacity: 0.85;
+}
+
+/* vertical text styling */
+.vertical-text {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 2px;
+  opacity: 0.85;
+  margin-right: 15px;
+}
+
+/* image styling */
+.feature-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* card color backgrounds */
+.card-blue {
+  background-image:url("portrait-confused-african-man.jpg");
+  background-size : cover;
+  background-repeat: no-repeat;
+  
+}
+
+.card-cyan { 
+	  background-image:url("thumbsup.jpg");
+  background-size : cover;
+  background-repeat: no-repeat;
 	
 }
-nav{
-	display: flex;
-	flex-direction : column;
-	justify-content:space-between;
-	height: 100%;
-	width: max-content;
-	background-color:#e4e4e4; 
-	height: 100vh;
-	}
-.navbar{
-	display: flex;
-	flex-direction: column;
-	gap: 1rem;
+.card-yellow{
+  background-image:url("idea-image.jpg");
+  background-size : cover;
+  background-repeat: no-repeat;
+  
 }
 
-.nav-link{
-	border-bottom: 1.5px solid gray;	
-	padding:0.5rem 0;
-}
-.navbar-div a{
-	padding: 0 2rem;	
+.content-img-sec{
+	width : 100%;
+	height : 90vh;
+	display : flex;
+	flex-direction : row;
+	flex : 1;
 }
 
-.navbar-div{
+.content-img{
+	background-image : url("forum-home-content.jpg");
+	width : 50%;
+	background-size : cover;
+	
+}
+
+.img-content{
+	background-color: #F4C542;
+	width : 50%;
+}
+
+footer{
+	background-color: #2c2c2c;
+	color : #F4C542;
 	padding: 1rem;
-	display: flex;
-	flex-direction : column;
-	justify-content:space-between;
-	height: 100%;
+	border-top: 1px solid #F4C542;
+	margin-top: 2rem;
+	text-align : center;
 }
 
-.userpic{
-	border-radius: 50%;
-	width: 4rem;
+
+.img-content {
+  position: relative;
+  max-width: 600px;
+  padding: 3rem;
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(4px);
+  border-radius: 16px;
+  z-index: 2;
+  text-align: left;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
-.main-div{
-	height: 90vh;
-	background-color: white;
-	width: 70vw;
-	display: flex;
-	justify-content: center;
-	align-items: center; 
+.img-content h1 {
+  font-size: 2.4rem;
+  color: #1e293b; /* deep slate */
+  margin-bottom: 1rem;
+  line-height: 1.2;
+  font-weight: 700;
 }
-	
+
+.img-content p {
+  color: #475569;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 1.8rem;
+}
+
+.img-content button {
+  background-color: #f1cd60;
+  color: #111;
+  font-weight: 600;
+  padding: 0.9rem 2rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.img-content button:hover {
+  background-color: #e3ba40;
+  transform: translateY(-2px);
+}
+

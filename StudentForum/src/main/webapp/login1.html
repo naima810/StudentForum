@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Student Forum</title>
+  <link rel="stylesheet" href="login1.css">
+</head>
+<body>
+  <div class="overlay"></div>
+  <div class="login-container">
+    <div class="form-section">
+      <h2>Welcome Back</h2>
+      <p id="intropara">Log in to continue the discussion.</p>
+		<div class="error-message" id="errorMessage"></div>
+      <form action="login.jsp" method="post">
+        <div class="input-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="Enter your email" required>
+        </div>
+
+        <div class="input-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" placeholder="Enter your password" required>
+        </div>
+
+        <button type="submit">Login</button>
+        <p class="signup-link">Don’t have an account? <a href="signup.jsp">Sign Up</a></p>
+      </form>
+    </div>
+
+    <div class="image-section"></div>
+  </div>
+</body>
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const error = params.get('error');
+  const msgDiv = document.getElementById('errorMessage');
+  const intropara= document.querySelector(".intropara");
+  
+  if (error === 'invalid') {
+    msgDiv.textContent = "Invalid email or password.";
+    msgDiv.style.color = "red";
+    msgDiv.style.margin = "0 0 1rem 0";
+    intropara.style.margin = "0rem";
+    
+  } else if (error === 'empty') {
+    msgDiv.textContent = "Please fill in all fields.";
+    msgDiv.style.color = "red";
+  }
+</script>
+
+</html>

@@ -1,4 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%
+    String userEmail = (String) session.getAttribute("userEmail");
+    if (userEmail == null) {
+        response.sendRedirect("login1.html?error=unauthorized");
+        return;
+    }
+%>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -77,14 +85,25 @@
 		</section>
 		
           <section class="cards-sec">
+          <h1>Discover Our Diverse Community</h1>
           <div class="cards">
                 <div class="card">
-                    <h3>Recent Queries</h3>
-                    <p>See what other students are asking.</p>
+                    <p>Computer Science</p>
                 </div>
                 <div class="card">
-                    <h3>Your Activity</h3>
-                    <p>Track your answers and progress here.</p>
+                    <p>Data structures & Algorithms</p>
+                </div>
+                <div class="card">
+                    <p>Dynamic Programming</p>
+                </div>
+                <div class="card">
+                    <p>Object Oriented Programming</p>
+                </div>
+                <div class="card">
+                    <p>Computer Architecture</p>
+                </div>
+                <div class="card">
+                    <p>Database Management</p>
                 </div>
                 </div>
             </section> 

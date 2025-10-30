@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Signup - Student Forum</title>
+  <link rel="stylesheet" href="signup1.css">
+</head>
+<body>
+  <div class="overlay"></div>
+  <div class="signup-container">
+    <div class="image-section"></div>
+
+    <div class="form-section">
+      <h2>Join Student Forum</h2>
+      <p>Connect, learn, and share your ideas with peers.</p>
+		<div class="error-message" id="errorMessage"></div>
+		<div class="success-message" id="successMessage"></div>
+		
+      <form action="signup.jsp" method="post">
+        <div class="input-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" placeholder="Enter your name" required>
+        </div>
+
+        <div class="input-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="Enter your email" required>
+        </div>
+
+        <div class="input-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" placeholder="Create a password" required>
+        </div>
+
+        <button type="submit">Sign Up</button>
+        <p class="login-link">Already have an account? <a href="login1.html">Login</a></p>
+      </form>
+    </div>
+  </div>
+</body>
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const error = params.get('error');
+  const success = params.get('success');
+  const errDiv = document.getElementById('errorMessage');
+  const successDiv = document.getElementById('successMessage');
+
+  if (error === 'email_exists') {
+    errDiv.textContent = "This email is already registered.";
+  } else if (error === 'failed') {
+    errDiv.textContent = "Registration failed. Please try again.";
+  } else if (error === 'empty') {
+    errDiv.textContent = "Please fill in all fields.";
+  }
+
+  if (success === 'registered') {
+    successDiv.textContent = "Account created successfully! Please log in.";
+  }
+</script>
+
+</html>

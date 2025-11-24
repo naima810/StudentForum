@@ -1,0 +1,132 @@
+/* ---------- BASIC RESET ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* ---------- LAYOUT ---------- */
+body {
+    display: flex;
+    background: #f3f3f3;
+}
+
+/* ---------- SIDEBAR ---------- */
+.sidebar {
+    width: 240px;
+    background: #2C2C2C;
+    color: white;
+    min-height: 100vh;
+    padding: 25px 20px;
+}
+
+.sidebar .logo {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 40px;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar ul li {
+    margin: 18px 0;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #d1d5db;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.sidebar ul li a:hover,
+.sidebar ul .active a {
+    color: #facc15; /* yellow */
+}
+
+/* ---------- MAIN CONTENT ---------- */
+.content {
+    flex: 1;
+    padding: 40px;
+}
+
+.title {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+/* ---------- SEARCH BAR ---------- */
+.search-box {
+    display: flex;
+    margin-bottom: 25px;
+}
+
+.search-box input {
+    flex: 1;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 8px 0 0 8px;
+    outline: none;
+    font-size: 16px;
+}
+
+.search-box button {
+    padding: 12px 25px;
+    background: #facc15;
+    border: none;
+    border-radius: 0 8px 8px 0;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+/* ---------- QUESTION CARDS ---------- */
+.question-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.question-card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 3px 12px rgba(0, 0, 0, 0.08);
+    transition: 0.3s;
+}
+
+.question-card:hover {
+    transform: translateY(-3px);
+}
+
+.q-title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.q-desc {
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.q-footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.tag {
+    background: #fde047; /* light yellow */
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.answers {
+    font-size: 14px;
+    color: #6b7280;
+}

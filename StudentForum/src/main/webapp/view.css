@@ -142,4 +142,16 @@ body {
 .answers {
     font-size: 14px;
     color: #6b7280;
+
+}
+.add-question{
+    padding:0.25rem 1rem;
+    font-size: 3rem;
+    border-radius: 50%;
+    background-color: #facc15;
+    align-items: end;
+    border: 3px solid black;
+    position: fixed;
+    right: 2rem;
+    bottom: 2vh;
 }

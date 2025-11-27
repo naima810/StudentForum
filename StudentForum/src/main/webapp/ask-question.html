@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ask Question - Student Forum</title>
+    <link rel="stylesheet" href="ask-Question.css">
+</head>
+
+<body>
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+        <h2 class="logo">Student Forum</h2>
+        <nav>
+            <a href="home.html">Home</a>
+            <a href="exploreQuestions.html">Explore Questions</a>
+            <a href="myQueries.html">My Queries</a>
+            <a href="myAnswers.html">My Answers</a>
+            <a href="settings.html">Settings</a>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <h1>Ask a Question</h1>
+        <p class="subtitle">Be clear and specific to get the best answers.</p>
+
+        <form class="question-form">
+
+            <label>Question Title</label>
+            <input type="text" placeholder="e.g., How do I connect Java with MySQL?" required>
+
+            <label>Tags</label>
+            <input type="text" placeholder="e.g., Java, MySQL, Backend" required>
+
+            <label>Description</label>
+            <textarea placeholder="Describe your problem in detail..." required></textarea>
+
+            <label>Upload Image (optional)</label>
+            <input type="file" accept="image/*">
+
+            <button type="submit" class="submit-btn">Submit Question</button>
+        </form>
+    </main>
+
+</body>
+</html>

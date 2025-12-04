@@ -23,6 +23,7 @@ String email = request.getParameter("email");
             if (rs.next()) {
 				session.setAttribute("userName", rs.getString("name"));
 				session.setAttribute("userEmail", email);
+				session.setAttribute("userId", rs.getInt("id"));
 
 		response.sendRedirect("forum.jsp"); // redirect to next page
 	} else {

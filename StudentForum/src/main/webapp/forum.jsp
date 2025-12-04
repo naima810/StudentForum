@@ -1,11 +1,4 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%
-    String userEmail = (String) session.getAttribute("userEmail");
-    if (userEmail == null) {
-        response.sendRedirect("login1.html?error=unauthorized");
-        return;
-    }
-%>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -36,9 +29,9 @@
 
     <div class="container">
         <aside class="sidebar">
-            <a href="home.jsp" class="active">Home</a>
-            <a href="forum-feed.jsp">Explore Questions</a>
-            <a href="myQueries.jsp">My Queries</a>
+            <a href="forum.jsp" class="active">Home</a>
+            <a href="view.jsp">Explore Questions</a>
+            <a href="myqueries.jsp">My Queries</a>
             <a href="myAnswers.jsp">My Answers</a>
             <a href="settings.jsp">Settings</a>
         </aside>
@@ -50,8 +43,8 @@
         		<p>Your space to <strong>ask questions</strong>, <strong>share answers</strong>, and <span class="soft-highlight">grow together</span>.</p>
         		<p class="subtext">Manage your queries, track discussions, and connect with curious minds.</p>
         	<div class="hero-btns">
-        		<button class="join">Join Us</button>
-        		<button class="forum-btn">Explore Community</button>
+        		<a href="signup.jsp"><button class="join">Join Us</button></a>
+        		<a href="view.jsp"><button class="forum-btn">Explore Community</button></a>
         	</div>
     		</div>
 		</div>

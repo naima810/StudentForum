@@ -13,6 +13,7 @@ body {
     color: white;
     min-height: 100vh;
     padding: 20px;
+    position : fixed;
 }
 
 .sidebar .logo {
@@ -39,59 +40,86 @@ body {
 .main-content {
     flex: 1;
     padding: 40px;
+    margin-left: 260px;
 }
-
+/* Main content layout */
 .main-content h1 {
-    margin: 0;
-    font-size: 32px;
+    font-size: 28px;
+    margin-bottom: 10px;
+    font-weight: 700;
 }
 
-.subtitle {
+.main-content .subtitle {
+    font-size: 14px;
     color: #555;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
 }
 
 /* Form styling */
 .question-form {
-    background: white;
-    padding: 30px;
-    width: 70%;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    background: #fff;
+    padding: 25px 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    max-width: 700px;
+    margin-top: 20px;
 }
 
 .question-form label {
-    font-size: 16px;
     display: block;
-    margin: 15px 0 5px;
+    margin-bottom: 6px;
+    font-weight: 600;
+    font-size: 14px;
+    color: #333;
 }
 
-.question-form input,
+.question-form input[type="text"],
+.question-form input[type="file"],
 .question-form textarea {
     width: 100%;
-    padding: 12px;
-    font-size: 15px;
-    border: 1px solid #ccc;
+    padding: 10px 12px;
+    margin-bottom: 18px;
+    border: 1px solid #ddd;
     border-radius: 6px;
-    margin-bottom: 10px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s;
 }
 
+.question-form input[type="text"]:focus,
+.question-form textarea:focus,
+.question-form input[type="file"]:focus {
+    border-color: #f5c242;
+}
+
+/* Textarea styling */
 .question-form textarea {
-    height: 150px;
     resize: vertical;
+    min-height: 120px;
 }
 
-.submit-btn {
-    width: 100%;
-    padding: 14px;
+/* Submit button */
+.question-form .submit-btn {
     background: #f5c242;
+    color: #2C2C2C;
+    padding: 12px 25px;
+    font-weight: 600;
     border: none;
-    border-radius: 6px;
-    font-size: 18px;
+    border-radius: 8px;
     cursor: pointer;
+    font-size: 16px;
+    transition: background 0.2s;
 }
 
-.submit-btn:hover {
-    background: #e4b236;
+.question-form .submit-btn:hover {
+    background: #e6b931;
 }
 
+/* Optional: make form responsive */
+@media (max-width: 900px) {
+    .question-form {
+        padding: 20px;
+        margin-right: 20px;
+        margin-left: 20px;
+    }
+}

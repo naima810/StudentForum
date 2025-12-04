@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Answer - Student Forum</title>
+    <link rel="stylesheet" href="view-answer.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="logo">Student Forum</div>
+        <ul class="nav-links">
+            <li><a href="forum.jsp">Home</a></li>
+            <li><a href="view.html">Explore Questions</a></li>
+            <li><a href="ask-question.html">My Queries</a></li>
+            <li><a href="myanswers.html">My Answers</a></li>
+            <li><a href="settings.html">Settings</a></li>
+            <li><a href="login1.html">Login</a></li>
+            <li><a class="signup-btn" href="signup1.html">Sign Up</a></li>
+        </ul>
+    </nav>
+
+    <!-- MAIN CONTAINER -->
+    <div class="container">
+
+        <div class="content-area">
+
+            <h2 class="page-title">Answer</h2>
+
+            <!-- QUESTION CARD -->
+            <div class="question-box">
+                <span class="tag">Web Dev</span>
+                <h3 class="question-title">What is the difference between GET and POST?</h3>
+                <p class="question-desc">I want to know the technical difference and when to use GET vs POST.</p>
+            </div>
+
+            <!-- ANSWERS SECTION -->
+            <h3 class="answers-heading">All Answers</h3>
+
+            <div class="answer-box">
+                <div class="answer-user">Anonymous User</div>
+                <p class="answer-text">
+                    GET is used to request data from the server and parameters appear in the URL.  
+                    POST sends data in the body, used for forms and sensitive information.
+                </p>
+            </div>
+
+            <div class="answer-box">
+                <div class="answer-user">Student123</div>
+                <p class="answer-text">
+                    GET is fast and cached; POST is secure and not cached.  
+                    Prefer POST for login, signup, or large form submissions.
+                </p>
+            </div>
+
+            <!-- ADD ANSWER -->
+            <h3 class="answers-heading">Write Your Answer</h3>
+
+            <form class="answer-form">
+                <textarea placeholder="Write your answer..." required></textarea>
+                <button type="submit" class="submit-btn">Post Answer</button>
+            </form>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

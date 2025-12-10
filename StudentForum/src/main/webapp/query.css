@@ -1,0 +1,107 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #f5f5f5;
+}
+
+/* LEFT SIDEBAR */
+.sidebar {
+    width: 240px;
+    height: 100vh;
+    background: #000;
+    color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 25px;
+}
+
+.logo {
+    color: #f6c028;
+    text-align: center;
+    font-size: 22px;
+    margin-bottom: 40px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    padding: 12px 0;
+}
+
+.sidebar ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.sidebar ul li:hover a,
+.sidebar ul li.active a {
+    color: #f6c028;
+}
+
+/* MAIN CONTENT */
+.main {
+    margin-left: 260px;
+    padding: 40px;
+}
+
+h1 {
+    font-size: 32px;
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    color: #777;
+    margin-bottom: 25px;
+}
+
+/* QUESTION CARD */
+.question-card {
+    background: #fff;
+    border-left: 5px solid #f6c028;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.question-card h2 {
+    margin-top: 0;
+}
+
+.category {
+    color: #f6c028;
+    margin: 6px 0;
+}
+
+.desc {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #333;
+}
+
+.date {
+    font-size: 12px;
+    color: #999;
+    margin-top: 10px;
+}
+
+/* If no queries */
+.no-queries {
+    font-size: 18px;
+    color: #777;
+}
+
+.error {
+    padding: 10px;
+    background: #ffdddd;
+    color: #c00;
+    border-left: 4px solid red;
+    width: fit-content;
+}

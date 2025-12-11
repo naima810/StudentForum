@@ -9,19 +9,19 @@
 <body>
 
 <!-- -------------- LEFT SIDEBAR ---------------- -->
-<div class="sidebar">
+<aside class="sidebar">
     <h2 class="logo">Student Forum</h2>
     <ul>
         <li><a href="forum.jsp">Home</a></li>
-        <li><a href="view.html">Explore Questions</a></li>
-        <li class="active"><a href="query.jsp">My Queries</a></li>
+        <li class="active"><a href="view.jsp">Explore Questions</a></li>
+        <li  class="active"><a href="query.jsp">My Queries</a></li>
         <li><a href="myanswers.jsp">My Answers</a></li>
         <li><a href="settings.jsp">Settings</a></li>
     </ul>
-</div>
+</aside>
 
 <!-- -------------- MAIN CONTENT ---------------- -->
-<div class="main">
+<main class="content">
 
     <h1>My Queries</h1>
     <p class="subtitle">All questions you have asked in the community</p>
@@ -81,7 +81,7 @@
         %>
 
     </div>
-</div>
+</main>
 
 </body>
 </html>

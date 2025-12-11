@@ -1,0 +1,113 @@
+/* ---------- BASIC RESET ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* ---------- LAYOUT ---------- */
+body {
+    display: flex;
+    background: #f3f3f3;
+}
+
+/* ---------- SIDEBAR ---------- */
+.sidebar {
+    width: 240px;
+    background: #2C2C2C;
+    color: white;
+    min-height: 100vh;
+    padding: 25px 20px;
+    position: fixed;
+}
+
+.sidebar .logo {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 40px;
+    color: #facc15;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar ul li {
+    margin: 18px 0;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #d1d5db;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.sidebar ul li a:hover,
+.sidebar ul .active a {
+    color: #facc15; /* yellow */
+}
+
+/* ---------- MAIN CONTENT ---------- */
+.content {
+	margin-left: 260px;
+	flex: 1;
+    padding: 40px;
+}
+
+/* MAIN CONTENT */
+
+h1 {
+    font-size: 32px;
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    color: #777;
+    margin-bottom: 25px;
+}
+
+/* QUESTION CARD */
+.question-card {
+    background: #fff;
+    border-left: 5px solid #f6c028;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.question-card h2 {
+    margin-top: 0;
+}
+
+.category {
+    color: #f6c028;
+    margin: 6px 0;
+}
+
+.desc {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #333;
+}
+
+.date {
+    font-size: 12px;
+    color: #999;
+    margin-top: 10px;
+}
+
+/* If no queries */
+.no-queries {
+    font-size: 18px;
+    color: #777;
+}
+
+.error {
+    padding: 10px;
+    background: #ffdddd;
+    color: #c00;
+    border-left: 4px solid red;
+    width: fit-content;

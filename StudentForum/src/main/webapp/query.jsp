@@ -1,4 +1,4 @@
-<%@ page import="java.sql., javax.sql." %>
+<%@ page import="java.sql.*" %>
 <%@ page session="true" %>
 <!DOCTYPE html>
 <html>
@@ -30,7 +30,7 @@
 
         <%  
             // --- Backend Logic Using Session ID ---
-            Integer userId = (Integer) session.getAttribute("user_id");
+            Integer userId = (Integer) session.getAttribute("userId");
 
             if (userId == null) {
         %>
@@ -44,7 +44,7 @@
 
                 try {
                     Class.forName("com.mysql.cj.jdbc.Driver");
-                    con = DriverManager.getConnection("jdbc:mysql://localhost:3307/studentforum", "root", "");
+                    con = DriverManager.getConnection("jdbc:mysql://localhost:3306/studentforum", "root", "");
 
                     String query = "SELECT * FROM questions WHERE user_id = ? ORDER BY created_at DESC";
                     pst = con.prepareStatement(query);

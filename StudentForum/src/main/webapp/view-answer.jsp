@@ -99,17 +99,39 @@ rsA.close(); psA.close();
 
     <!-- Add Answer Form -->
     <h3 class="answers-heading">Write Your Answer</h3>
-    <form class="answer-form" action="submit-answer.jsp" method="post">
-        <input type="hidden" name="questionId" value="<%= questionId %>">
-        <textarea name="answerText" placeholder="Write your answer..." required></textarea>
-        <button type="submit" class="submit-btn">Post Answer</button>
-    </form>
+    <form  class="answer-form" action="submit-answer.jsp" method="post" onsubmit="return requireLogin(event, <%= (session.getAttribute("userId") != null) %>)">
+    <input type="hidden" name="questionId" value="<%= questionId %>">
+    <textarea name="answerText" placeholder="Write your answer..." required></textarea>
+    <button type="submit" class="submit-btn" data-loggedin="<%= (session.getAttribute("userId") != null) %>">Post Answer</button>
+</form>
 
+
+</div>
+<div id="loginModal" class="modal">
+    <div class="modal-box">
+        <h3>Login Required</h3>
+        <p>You need to log in to post an answer.</p>
+        <div class="modal-actions">
+        <%
+    // Get the current page URL with query string
+    String currentURL = request.getRequestURI();
+    String queryString = request.getQueryString();
+    if(queryString != null){
+        currentURL += "?" + queryString;
+    }
+    String redirectURL = java.net.URLEncoder.encode(currentURL, "UTF-8");
+%>
+<a href="login1.html?redirect=<%= redirectURL %>" class="login-btn">Login</a>
+<button class="cancel-btn" onclick="closeLoginModal()">Cancel</button>
+        </div>
+    </div>
 </div>
 </main>
 
 <%
     conn.close();
 %>
+<script src="login-modal.js"></script>
+
 </body>
 </html>

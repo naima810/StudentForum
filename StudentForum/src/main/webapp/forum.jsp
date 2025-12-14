@@ -1,4 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%
+Integer userId = (Integer) session.getAttribute("userId");
+boolean isLoggedIn = (userId != null);
+%>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -17,7 +21,12 @@
         </nav>
         <div class="topbar-profile">
         <% String userName = (String) session.getAttribute("userName"); %>
-        	<p><%= Hello, (userName)%></p>
+        	<p>Hello,<% if(userName==null){%>
+        		<p>User</p>
+        	<%}
+        	else{  %>
+        		<p><%=userName%></p>
+        		<%} %>
         	
         	<div class="topbar-profile-pic"></div>
         </div>
@@ -34,7 +43,7 @@
             <a href="forum.jsp" class="active">Home</a>
             <a href="view.jsp">Explore Questions</a>
             <a href="query.jsp">My Queries</a>
-            <a href="myAnswers.jsp">My Answers</a>
+            <a href="myanswers.jsp">My Answers</a>
             <a href="settings.jsp">Settings</a>
         </aside>
 
@@ -75,7 +84,10 @@
 			<div class="img-content">
 			  	<h1>Connect. Learn. Grow Together.</h1>
   				<p>Join students from every field sharing ideas, solving doubts, and helping each other succeed. This is your space to ask, discuss, and discover what you’ve been missing.</p>
-  				<button>Ask a Question</button>
+  				<button class="ask-btn" data-loggedin="<%= isLoggedIn %>" onclick="handleAskClick(this)">
+    Ask a Question
+</button>
+
 			</div>
 		</section>
 		
@@ -102,12 +114,22 @@
                 </div>
                 </div>
             </section> 
-            
+            <div id="loginModal" class="modal">
+    <div class="modal-box">
+        <h3>Login Required</h3>
+        <p>You need to log in to ask a question.</p>
+
+        <div class="modal-actions">
+            <a href="login1.html" class="login-btn">Login</a>
+            <button class="cancel-btn" onclick="closeLoginModal()">Cancel</button>
+        </div>
+    </div>
+</div>
             <footer>
     &copy;Copyrights 2025 Reserved to KN.    </footer>
         </main>
         
     </div>
-    
+<script src="login-modal.js"></script>
 </body>
 </html>

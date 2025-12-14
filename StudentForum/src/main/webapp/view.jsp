@@ -1,4 +1,8 @@
 <%@ page import="java.sql.*, java.util.*" %>
+<%
+Integer userId = (Integer) session.getAttribute("userId");
+boolean isLoggedIn = (userId != null);
+%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,8 +32,14 @@
     <input type="text" placeholder="Search questions...">
     <button>Search</button>
 </div>
+<a href="javascript:void(0)"
+   class="ask-btn"
+   onclick="requireLogin(event, <%= (session.getAttribute("userId") != null) %>, 'ask-question.jsp')">
 
-<a href="ask-question.jsp"><button class="ques-plus">+</button></a>
+    <span class="ask-label">Ask Question</span>
+    <span class="ask-icon">+</span>
+</a>
+
 
 <div class="question-list">
 
@@ -79,6 +89,29 @@
 %>
 
 </div>
+<div id="loginModal" class="modal">
+    <div class="modal-box">
+        <h3>Login Required</h3>
+        <p>You need to log in to ask a question.</p>
+
+        <div class="modal-actions">
+            <%
+    // Get the current page URL with query string
+    String currentURL = request.getRequestURI();
+    String queryString = request.getQueryString();
+    if(queryString != null){
+        currentURL += "?" + queryString;
+    }
+    String redirectURL = java.net.URLEncoder.encode(currentURL, "UTF-8");
+%>
+
+            <a href="login1.html?redirect=<%= redirectURL %>" class="login-btn">Login</a>
+            <button class="cancel-btn" onclick="closeLoginModal()">Cancel</button>
+        </div>
+    </div>
+</div>
 </main>
+<script src="login-modal.js"></script>
+
 </body>
 </html>

@@ -1,4 +1,10 @@
 /* Body layout */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: #f3f3f3; border-radius: 5px; }
+::-webkit-scrollbar-thumb { background: #facc15; border-radius: 5px; border: 2px solid #f3f3f3; }
+::-webkit-scrollbar-thumb:hover { background: #eab308; }
+
+
 body {
     margin: 0;
     display: flex;

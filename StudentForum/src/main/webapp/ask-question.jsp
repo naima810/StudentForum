@@ -18,7 +18,7 @@
         <a href="forum.jsp">Home</a>
         <a href="view.jsp">Explore Questions</a>
         <a href="queries.jsp">My Queries</a>
-        <a href="answers.jsp">My Answers</a>
+        <a href="myanswers.jsp">My Answers</a>
         <a href="settings.jsp">Settings</a>
     </nav>
 </aside>

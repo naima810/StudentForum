@@ -25,7 +25,13 @@ String email = request.getParameter("email");
 				session.setAttribute("userEmail", email);
 				session.setAttribute("userId", rs.getInt("id"));
 
-		response.sendRedirect("forum.jsp"); // redirect to next page
+			    // Assume login validation succeeded
+			    String redirectURL = request.getParameter("redirect");
+			    if (redirectURL == null || redirectURL.isEmpty()) {
+			        redirectURL = "forum.jsp"; // default page
+			    }
+			    response.sendRedirect(redirectURL);
+		 // redirect to next page
 	} else {
 		response.sendRedirect("login1.html?error=invalid");
 	}

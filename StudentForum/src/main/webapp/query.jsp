@@ -13,7 +13,7 @@
     <h2 class="logo">Student Forum</h2>
     <ul>
         <li><a href="forum.jsp">Home</a></li>
-        <li class="active"><a href="view.jsp">Explore Questions</a></li>
+        <li><a href="view.jsp">Explore Questions</a></li>
         <li  class="active"><a href="query.jsp">My Queries</a></li>
         <li><a href="myanswers.jsp">My Answers</a></li>
         <li><a href="settings.jsp">Settings</a></li>

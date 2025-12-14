@@ -16,7 +16,9 @@
             <a href="contact.jsp">Contact</a>
         </nav>
         <div class="topbar-profile">
-        	<p>Hello, name!</p>
+        <% String userName = (String) session.getAttribute("userName"); %>
+        	<p><%= Hello, (userName)%></p>
+        	
         	<div class="topbar-profile-pic"></div>
         </div>
   <!--      
@@ -31,7 +33,7 @@
         <aside class="sidebar">
             <a href="forum.jsp" class="active">Home</a>
             <a href="view.jsp">Explore Questions</a>
-            <a href="myqueries.jsp">My Queries</a>
+            <a href="query.jsp">My Queries</a>
             <a href="myAnswers.jsp">My Answers</a>
             <a href="settings.jsp">Settings</a>
         </aside>

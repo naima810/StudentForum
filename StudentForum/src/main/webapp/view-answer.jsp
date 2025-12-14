@@ -26,7 +26,7 @@
     <ul>
         <li><a href="view.jsp">Home</a></li>
         <li class="active"><a href="view.jsp">Explore Questions</a></li>
-        <li><a href="myqueries.jsp">My Queries</a></li>
+        <li><a href="query.jsp">My Queries</a></li>
         <li><a href="answers.jsp">My Answers</a></li>
         <li><a href="settings.jsp">Settings</a></li>
     </ul>

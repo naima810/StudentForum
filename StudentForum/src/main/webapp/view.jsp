@@ -1,7 +1,9 @@
 <%@ page import="java.sql.*, java.util.*" %>
 <%
-Integer userId = (Integer) session.getAttribute("userId");
-boolean isLoggedIn = (userId != null);
+    Integer userId = (Integer) session.getAttribute("userId");
+    boolean isLoggedIn = (userId != null);
+
+    String searchQuery = request.getParameter("q");
 %>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,7 +15,7 @@ boolean isLoggedIn = (userId != null);
 </head>
 <body>
 
-<!-- Sidebar -->
+<!-- Side-bar -->
 <aside class="sidebar">
     <h2 class="logo">Student Forum</h2>
     <ul>
@@ -28,18 +30,20 @@ boolean isLoggedIn = (userId != null);
 <main class="content">
 <h1 class="title">Explore Questions</h1>
 
-<div class="search-box">
-    <input type="text" placeholder="Search questions...">
-    <button>Search</button>
-</div>
+<!-- Search Form -->
+<form method="get" action="view.jsp" class="search-box">
+    <input type="text" name="q" placeholder="Search questions..." value="<%= searchQuery != null ? searchQuery : "" %>">
+    <button type="submit">Search</button>
+</form>
+
+<!-- Ask Question Button -->
 <a href="javascript:void(0)"
    class="ask-btn"
-   onclick="requireLogin(event, <%= (session.getAttribute("userId") != null) %>, 'ask-question.jsp')">
+   onclick="requireLogin(event, <%= isLoggedIn %>, 'ask-question.jsp')">
 
     <span class="ask-label">Ask Question</span>
     <span class="ask-icon">+</span>
 </a>
-
 
 <div class="question-list">
 
@@ -52,11 +56,23 @@ boolean isLoggedIn = (userId != null);
                    "u.name AS author_name, COUNT(a.id) AS total_answers " +
                    "FROM questions q " +
                    "JOIN users u ON q.user_id = u.id " +
-                   "LEFT JOIN answers a ON a.question_id = q.id " +
-                   "GROUP BY q.id, q.question_text, q.category, q.created_at, u.name " +
-                   "ORDER BY q.created_at DESC";
+                   "LEFT JOIN answers a ON a.question_id = q.id ";
+
+    if(searchQuery != null && !searchQuery.trim().isEmpty()) {
+        query += "WHERE q.question_text LIKE ? OR q.category LIKE ? ";
+    }
+
+    query += "GROUP BY q.id, q.question_text, q.category, q.created_at, u.name " +
+             "ORDER BY q.created_at DESC";
 
     PreparedStatement ps = conn.prepareStatement(query);
+
+    if(searchQuery != null && !searchQuery.trim().isEmpty()) {
+        String likeQuery = "%" + searchQuery.trim() + "%";
+        ps.setString(1, likeQuery);
+        ps.setString(2, likeQuery);
+    }
+
     ResultSet rs = ps.executeQuery();
 
     while(rs.next()) {
@@ -82,13 +98,16 @@ boolean isLoggedIn = (userId != null);
     </div>
 </div>
 
-    
 <%
     }
-    rs.close(); ps.close(); conn.close();
+    rs.close();
+    ps.close();
+    conn.close();
 %>
 
 </div>
+
+<!-- Login Modal -->
 <div id="loginModal" class="modal">
     <div class="modal-box">
         <h3>Login Required</h3>
@@ -96,22 +115,21 @@ boolean isLoggedIn = (userId != null);
 
         <div class="modal-actions">
             <%
-    // Get the current page URL with query string
-    String currentURL = request.getRequestURI();
-    String queryString = request.getQueryString();
-    if(queryString != null){
-        currentURL += "?" + queryString;
-    }
-    String redirectURL = java.net.URLEncoder.encode(currentURL, "UTF-8");
-%>
+                String currentURL = request.getRequestURI();
+                String queryString = request.getQueryString();
+                if(queryString != null){
+                    currentURL += "?" + queryString;
+                }
+                String redirectURL = java.net.URLEncoder.encode(currentURL, "UTF-8");
+            %>
 
             <a href="login1.html?redirect=<%= redirectURL %>" class="login-btn">Login</a>
             <button class="cancel-btn" onclick="closeLoginModal()">Cancel</button>
         </div>
     </div>
 </div>
+
 </main>
 <script src="login-modal.js"></script>
-
 </body>
 </html>

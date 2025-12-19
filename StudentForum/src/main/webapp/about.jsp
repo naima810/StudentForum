@@ -5,14 +5,14 @@
     <title>About Us | Student Forum</title>
 
     <!-- Existing common CSS (navbar, layout, theme) -->
-    <link rel="stylesheet" href="Aboutus.css">
+    <link rel="stylesheet" href="about.css">
 
 </head>
 <body>
      <header class="topbar">
         <div class="logo">Student Forum</div>
         <nav class="topnav">
-            <a href="Aboutus.jsp">About Us</a>
+            <a href="about.jsp"  class="active">About Us</a>
             <a href="complaint.jsp">Complaint</a>
             <a href="contact.jsp">Contact</a>
         </nav>
@@ -123,10 +123,12 @@
    
 </section>
             
-
+</div>
     <footer class="page-footer">
      &copy;Copyrights 2025 Reserved to KN.
      </footer>
+     
      </main>
+     </div>
 </body>
 </html>

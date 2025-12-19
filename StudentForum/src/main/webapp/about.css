@@ -53,6 +53,12 @@ body {
 	/* gold hover */
 }
 
+
+.topbar a.active {
+	color: #F4C542;
+	font-weight: 600;
+}
+
 /* Profile section in topbar */
 .topbar-profile {
 	display: flex;
@@ -85,21 +91,26 @@ body {
 
 
 /* Sidebar */
+/* ---------------- Layout ---------------- */
+.container {
+	display: flex;
+	height: 100vh;
+}
+
+/* ---------------- Sidebar ---------------- */
 .sidebar {
-	width: 250px;
+	width: 200px;
 	background-color: #F2F2F2;
 	display: flex;
 	flex-direction: column;
 	padding: 20px 0;
 	border-right: 1px solid #DDD;
-    height: calc(100vh-110px);
-	box-sizing: border-box;
-	z-index: 3;
 	position: fixed;
 	top: 60px;
-	bottom: 50px;
+	bottom: 0;
 	left: 0;
 	overflow-y: auto;
+	z-index: 3;
 }
 
 .sidebar a {
@@ -121,43 +132,43 @@ body {
 	font-weight: 600;
 }
 
-.main-content{
-	display: flex;
-	justify-content: center;
-	align-items: center;
+/* ---------------- Main Content ---------------- */
+.main-content {
+	margin-left: 200px; /* sidebar width */
+	margin-top: 60px; /* topbar height */
+	display: block;
+	overflow-y: auto;
+	gap: 2rem;
 }
 
 .about-container 
-{ padding: 60px 80px;
-	width: 80%;
-	background:
-     #ffffff	; 
-     border-radius: 12px;
+{ 
+	padding: 60px 80px;
+	width: 70%;
+	background: #ffffff	; 
+    border-radius: 12px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.08); 
-	margin: auto;
+	margin: auto ;
+	margin-top: 2rem;
 }
 
-.about-container h1
-{
+.about-container h1{
      font-size: 36px;
      margin-bottom: 20px; 
      color: #222; }
 
-.about-container h1 span
- {
+.about-container h1 span {
      color: #f2b705;
       /* theme yellow */ }
 
-.about-container p
- { 
+.about-container p{ 
     font-size: 16px; 
     line-height: 1.8; 
     color: #555;
      margin-bottom: 18px;
  }
 
-.features 
-{
+.features {
      display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); 
       gap: 20px;
@@ -226,20 +237,11 @@ body {
 	color: #F4C542;
 	padding: 1rem;
 	border-top: 1px solid #F4C542;
-	margin-top: 2rem;
-	width:100%;
-	margin:0;
 	text-align: center;
-	box-sizing:border-box;
-	position: fixed;
-	bottom: 0;
-	left: 0;
-	z-index: 15;
+	box-sizing: border-box;
+	width: 100%;
 	height: 50px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	
+	margin-top :3rem;
 }
 .topbar {
     position: fixed;
@@ -249,15 +251,6 @@ body {
     z-index: 10;
 }
 
-
-
-.main-content {
-    margin-left: 300px;
-    margin-top: 60px;
-    padding-bottom: 120px;
-    display: block;
-    overflow-y: auto;
-}
  
 
 

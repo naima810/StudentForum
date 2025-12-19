@@ -54,6 +54,7 @@
                     boolean found = false;
 
                     while (rs.next()) {
+                    	int qid = rs.getInt("id");
                         found = true;
         %>
 
@@ -63,6 +64,7 @@
                             <p class="category">Category: <%= rs.getString("category") %></p>
                             <p class="desc"><%= rs.getString("description") %></p>
                             <p class="date">Posted on: <%= rs.getString("created_at") %></p>
+                            <a href="view-answer.jsp?questionId=<%= qid %>"><button class="view-ans">View Answers</button></a>
                         </div>
 
         <%

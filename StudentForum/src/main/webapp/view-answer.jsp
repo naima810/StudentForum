@@ -80,7 +80,9 @@ String aQuery = "SELECT a.id AS answer_id, a.answer_text, a.created_at, u.name A
 PreparedStatement psA = conn.prepareStatement(aQuery);
 psA.setInt(1, questionId);
 ResultSet rsA = psA.executeQuery();
+boolean found = false;
 while(rsA.next()){
+	found = true;
 %>
 <div class="answer-box">
     <div class="answer-meta-top">
@@ -91,6 +93,11 @@ while(rsA.next()){
         <span class="answer-date"><%= rsA.getDate("created_at") %></span>
     </div>
 </div>
+<%
+}
+if(!found){
+	%>
+	<p class="no-answers">There has been no answers yet. Be the first to answer.</p>
 <%
 }
 rsA.close(); psA.close();

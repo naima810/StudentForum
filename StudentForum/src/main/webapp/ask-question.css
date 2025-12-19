@@ -14,7 +14,7 @@ body {
 
 /* Sidebar */
 .sidebar {
-    width: 230px;
+    width: 200px;
     background: #2C2C2C;
     color: white;
     min-height: 100vh;
@@ -38,8 +38,7 @@ body {
 }
 
 .sidebar nav a:hover {
-    color: white;
-    border-left: 3px solid #f5c242;
+    color: #f5c242;
 }
 
 /* Main content */
